@@ -140,3 +140,4 @@ cython_debug/
 /datasets
 
 /pickles
+/pytest
