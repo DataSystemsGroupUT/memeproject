@@ -1,0 +1,117 @@
+astroid==2.5.2
+attrs==20.3.0
+beautifulsoup4==4.9.3
+blis==0.7.4
+boto3==1.13.26
+botocore==1.16.26
+catalogue==2.0.1
+certifi==2020.4.5.2
+chardet==3.0.4
+click==7.1.2
+contextvars==2.4
+cssselect==1.1.0
+cymem==2.0.5
+dataclasses==0.8
+decorator @ file:///home/ktietz/src/ci/decorator_1611930055503/work
+docutils==0.15.2
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0-py3-none-any.whl
+et-xmlfile==1.0.1
+feedfinder2==0.0.4
+feedparser==6.0.2
+filelock==3.0.12
+flake8==3.9.0
+future==0.18.2
+idna==2.9
+immutables==0.15
+importlib-metadata==3.9.0
+iniconfig==1.1.1
+ipykernel @ file:///tmp/build/80754af9/ipykernel_1596206602906/work/dist/ipykernel-5.3.4-py3-none-any.whl
+ipython==5.8.0
+ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/work
+isort==5.8.0
+jieba3k==0.35.1
+Jinja2==2.11.3
+jmespath==0.10.0
+joblib==0.15.1
+jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
+jupyter-core @ file:///tmp/build/80754af9/jupyter_core_1612213308682/work
+lazy-object-proxy==1.6.0
+liac-arff==2.3
+lxml==4.6.3
+MarkupSafe==1.1.1
+mccabe==0.6.1
+murmurhash==1.0.5
+networkx==2.5
+newspaper3k==0.2.8
+nltk==3.5
+numpy==1.18.5
+openml==0.10.2
+openpyxl==3.0.7
+packaging==20.9
+pandas==0.25.3
+pathy==0.4.0
+pexpect @ file:///tmp/build/80754af9/pexpect_1605563209008/work
+pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
+Pillow==8.2.0
+pke @ git+https://github.com/boudinfl/pke.git@aa7df17214252b6bab2f1988eba89fdce8050818
+pluggy==0.13.1
+preshed==3.0.5
+prompt-toolkit==1.0.15
+psutil==5.7.0
+ptyprocess @ file:///tmp/build/80754af9/ptyprocess_1609355006118/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl
+py==1.10.0
+pycodestyle==2.7.0
+pydantic==1.7.3
+pyflakes==2.3.1
+Pygments @ file:///tmp/build/80754af9/pygments_1615143339740/work
+pylint==2.7.4
+pyparsing==2.4.7
+pytest==6.2.3
+python-dateutil==2.8.1
+pytz==2020.1
+PyYAML==5.4.1
+pyzmq==20.0.0
+regex==2021.3.17
+requests==2.23.0
+requests-file==1.5.1
+ruamel.yaml==0.16.10
+ruamel.yaml.clib==0.2.0
+s3transfer==0.3.3
+sacremoses==0.0.43
+scikit-learn==0.23.1
+scipy==1.2.3
+sentence-transformers==1.0.3
+sentencepiece==0.1.95
+sgmllib3k==1.0.0
+simplegeneric==0.8.1
+six==1.15.0
+sklearn==0.0
+smart-open==3.0.0
+soupsieve==2.2.1
+spacy==3.0.5
+spacy-legacy==3.0.1
+srsly==2.4.0
+textblob==0.15.3
+thinc==8.0.2
+threadpoolctl==2.1.0
+tinysegmenter==0.3
+tldextract==3.1.0
+tokenizers==0.10.1
+toml==0.10.2
+torch==1.8.1
+tornado @ file:///tmp/build/80754af9/tornado_1606942266872/work
+tqdm==4.59.0
+traitlets==4.3.3
+transformers==4.4.2
+typed-ast==1.4.2
+typer==0.3.2
+typing-extensions==3.7.4.3
+Unidecode==1.2.0
+urllib3==1.25.9
+vaderSentiment==3.3.2
+wasabi==0.8.2
+wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
+wrapt==1.12.1
+xlrd==1.2.0
+xmltodict==0.12.0
+zipp==3.4.1
