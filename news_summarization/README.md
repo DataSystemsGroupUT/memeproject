@@ -10,3 +10,6 @@
             [polarity]: [polarity is used for finding sentiment of article]
             [keywords]: [keywords of article]
         """
+
+# demo
+![Alt Text](demo.gif)
