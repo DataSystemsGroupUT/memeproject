@@ -1,4 +1,4 @@
-# news_summarization
+# News_summarization
 
         """
         summarize an article by using Newspaper package.
@@ -11,5 +11,6 @@
             [keywords]: [keywords of article]
         """
 
-# demo
+# Demo
+
 ![Alt Text](demo.gif)
