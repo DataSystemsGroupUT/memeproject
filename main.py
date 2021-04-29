@@ -15,4 +15,3 @@ if __name__ == "__main__":
     # #processor.get_one_emb()
     print(processor.get_sentiment())
     print("Done!")
- 
