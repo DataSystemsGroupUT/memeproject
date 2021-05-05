@@ -9,8 +9,9 @@ from nltk.corpus import stopwords as Stopwords
 
 
 class TextProcess(object):
-
-    def __init__(self,):
+    def __init__(
+        self,
+    ):
         self.spacy_model = spacy.load("en_core_web_sm")
         self.sent_analyzer = SentimentIntensityAnalyzer()
         self.text = None
@@ -20,7 +21,7 @@ class TextProcess(object):
         self.ents_text_emb = None
         self.keyphrases_emb = None
 
-        self.model = SentenceTransformer('distilbert-base-nli-mean-tokens')
+        self.model = SentenceTransformer("distilbert-base-nli-mean-tokens")
 
     def load_text(self, text):
         self.text = text
@@ -39,17 +40,18 @@ class TextProcess(object):
         self.ents = []
         self.ents_text = []
         for each in self.sp_text.ents:
-            self.ents.append([each.text, each.start_char, each.end_char,
-                              each.label_])
+            self.ents.append([each.text, each.start_char, each.end_char, each.label_])
             self.ents_text.append(each.text)
 
     def get_keyphrases(self, thershold=0.02):
         keyphrases = []
         self.keyphrases = {}
-        for extractor in [pke.unsupervised.TopicRank(),
-                          pke.unsupervised.YAKE(),
-                          pke.unsupervised.PositionRank()]:
-            extractor.load_document(input=self.text_file, language='en')
+        for extractor in [
+            pke.unsupervised.TopicRank(),
+            pke.unsupervised.YAKE(),
+            pke.unsupervised.PositionRank(),
+        ]:
+            extractor.load_document(input=self.text_file, language="en")
             extractor.candidate_selection()
             extractor.candidate_weighting()
             keyphrases.extend(extractor.get_n_best(n=10))
@@ -59,8 +61,9 @@ class TextProcess(object):
                 self.keyphrases[each[0]] /= 2
             except Exception:
                 self.keyphrases[each[0]] = each[1]
-        self.keyphrases = sorted(self.keyphrases.items(), key=lambda x: x[1],
-                                 reverse=True)
+        self.keyphrases = sorted(
+            self.keyphrases.items(), key=lambda x: x[1], reverse=True
+        )
         self.filtered_keyphrases = []
         for each in self.keyphrases:
             if each[1] > thershold:
@@ -83,7 +86,7 @@ class TextProcess(object):
 
             sentiment += score["compound"]
 
-        self.sentiment["compound"] = sentiment/len(self.text.splitlines())
+        self.sentiment["compound"] = sentiment / len(self.text.splitlines())
         self.sentiment["list"] = sentiments
 
     def get_chunks(self):
@@ -106,11 +109,11 @@ class TextProcess(object):
         postoks = nltk.tag.pos_tag(toks)
         # print (postoks)
         tree = chunker.parse(postoks)
-        stopwords = Stopwords.words('english')
+        stopwords = Stopwords.words("english")
 
         def leaves(tree):
             """Finds NP (nounphrase) leaf nodes of a chunk tree."""
-            for subtree in tree.subtrees(filter=lambda t: t.label() == 'NP'):
+            for subtree in tree.subtrees(filter=lambda t: t.label() == "NP"):
                 yield subtree.leaves()
 
         def normalise(word):
@@ -125,8 +128,7 @@ class TextProcess(object):
         def acceptable_word(word):
             """Checks conditions for acceptable word: length, stopword.
             We can increase the length if we want to consider large phrase"""
-            accepted = bool(2 <= len(word) <= 40
-                            and word.lower() not in stopwords)
+            accepted = bool(2 <= len(word) <= 40 and word.lower() not in stopwords)
             return accepted
 
         def get_terms(tree):
@@ -143,7 +145,8 @@ class TextProcess(object):
         self.get_keyphrases()
         self.get_chunks()
         self.chunks_emb = self.model.encode(
-            list(itertools.chain.from_iterable(self.chunks)))
+            list(itertools.chain.from_iterable(self.chunks))
+        )
         self.ents_text_emb = self.model.encode(self.ents_text)
         self.keyphrases_emb = self.model.encode(self.filtered_keyphrases)
 
@@ -151,6 +154,8 @@ class TextProcess(object):
         self.chunk_emb_one = np.average(self.chunks_emb, axis=0)
         self.ents_text_emb_one = np.average(self.ents_text_emb, axis=0)
         self.keyphrases_emb_one = np.average(self.keyphrases_emb, axis=0)
+
+
 # processor = ProcessText()
 # processor.load_text("She left her husband. He killed their children.
 # Just another day in America.")
