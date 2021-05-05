@@ -6,22 +6,19 @@ from tools import textprocess
 
 
 class MemeDatasetProcess(object):
-
     def __init__(self, datafile):
         xls = datafile
-        self.memes = pd.read_excel(xls, 'memes', engine='openpyxl')
-        self.constructors = pd.read_excel(xls, 'constructors',
-                                          engine='openpyxl')
-        self.origins = pd.read_excel(xls, 'origins', engine='openpyxl')
-        self.characters = pd.read_excel(xls, 'characters', engine='openpyxl')
-        self.tvshows = pd.read_excel(xls, 'tvshows', engine='openpyxl')
-        self.movies = pd.read_excel(xls, 'movies', engine='openpyxl')
-        self.games = pd.read_excel(xls, 'games', engine='openpyxl')
-        self.youtube_video = pd.read_excel(xls, 'youtube_video',
-                                           engine='openpyxl')
-        self.animals = pd.read_excel(xls, 'animals', engine='openpyxl')
-        self.country = pd.read_excel(xls, 'country', engine='openpyxl')
-        self.platform = pd.read_excel(xls, 'platform', engine='openpyxl')
+        self.memes = pd.read_excel(xls, "memes", engine="openpyxl")
+        self.constructors = pd.read_excel(xls, "constructors", engine="openpyxl")
+        self.origins = pd.read_excel(xls, "origins", engine="openpyxl")
+        self.characters = pd.read_excel(xls, "characters", engine="openpyxl")
+        self.tvshows = pd.read_excel(xls, "tvshows", engine="openpyxl")
+        self.movies = pd.read_excel(xls, "movies", engine="openpyxl")
+        self.games = pd.read_excel(xls, "games", engine="openpyxl")
+        self.youtube_video = pd.read_excel(xls, "youtube_video", engine="openpyxl")
+        self.animals = pd.read_excel(xls, "animals", engine="openpyxl")
+        self.country = pd.read_excel(xls, "country", engine="openpyxl")
+        self.platform = pd.read_excel(xls, "platform", engine="openpyxl")
 
     def processor_memes(self, text="title", criteria=["sentiment", "emb"]):
         self.processed_memes = []
@@ -40,8 +37,7 @@ class MemeDatasetProcess(object):
             self.processed_memes.append([Id, processed_meme])
             i += 1
 
-    def get_similar_memes(self, processed_input,
-                          criteria="keyphrases_emb_one"):
+    def get_similar_memes(self, processed_input, criteria="keyphrases_emb_one"):
         if criteria == "keyphrases_emb_one":
             inp = processed_input.keyphrases_emb_one
         elif criteria == "ents_text_emb_one":
@@ -59,8 +55,7 @@ class MemeDatasetProcess(object):
         for processed_meme in self.processed_memes:
             Id = processed_meme[0]
             processed_meme_text = processed_meme[1]
-            if criteria in ["keyphrases_emb_one", "ents_text_emb_one",
-                            "chunk_emb_one"]:
+            if criteria in ["keyphrases_emb_one", "ents_text_emb_one", "chunk_emb_one"]:
                 if criteria == "keyphrases_emb_one":
                     meme_inp = processed_meme_text.keyphrases_emb_one
                 elif criteria == "ents_text_emb_one":
