@@ -26,12 +26,12 @@ class NewsSummarization(object):
         try:
             article = Article(str(self.url))
             article.download()
-            article .parse()
-            article .nlp()
+            article.parse()
+            article.nlp()
 
-            title = article .title
-            summary = article .summary
-            publish_date = article .publish_date
+            title = article.title
+            summary = article.summary
+            publish_date = article.publish_date
             keywords = article.keywords
 
             analysis = TextBlob(summary)
@@ -39,4 +39,4 @@ class NewsSummarization(object):
 
             return title, summary, publish_date, keywords, polarity
         except Exception:
-            print('An exception occurred')
+            print("An exception occurred")
