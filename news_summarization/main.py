@@ -1,7 +1,7 @@
 from news_summarization import NewsSummarization
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Please provide the URL of an article as input.
     url = input("Please provide the URL of an article as input:")
     url = """https://news.err.ee/1608184081/restrictions-to-be-relaxed-from-april-26"""
@@ -19,5 +19,7 @@ if __name__ == '__main__':
     print("######################################################################")
     print(f"polarity: {polarity}")
     print("######################################################################")
-    print(f'Sentiment:{ "positive" if polarity > 0 else "negative" if polarity < 0 else "neutral" }')
+    print(
+        f'Sentiment:{ "positive" if polarity > 0 else "negative" if polarity < 0 else "neutral" }'
+    )
     print("######################################################################")
