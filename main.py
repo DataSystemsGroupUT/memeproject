@@ -1,8 +1,8 @@
-from tools import TextProcess
+from tools import textprocess
 
 
 if __name__ == "__main__":
-    processor = TextProcess.TextProcess()
+    processor = textprocess.TextProcess()
     # processor = ProcessText()
     processor.load_text("She left her husband. He killed their children. Just another day in America.")
     # processor.load_text_file("test.txt")

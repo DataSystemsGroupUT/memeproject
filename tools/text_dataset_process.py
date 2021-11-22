@@ -10,7 +10,7 @@ class TextDatasetProcess(object):
         datafile="blogtext.csv",
         nrows=50,
         lines=681285,
-        meme_dataset="datasets/Dataset Knowledge Graph.xlsx",
+        meme_dataset="../datasets/Dataset Knowledge Graph.xlsx",
     ):
         t = lines - (nrows + 2)
         skip = range(1, random.randint(0, t))
