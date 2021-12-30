@@ -37,7 +37,7 @@ jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
 jupyter-core @ file:///tmp/build/80754af9/jupyter_core_1612213308682/work
 lazy-object-proxy==1.6.0
 liac-arff==2.3
-lxml==4.6.3
+lxml==4.6.5
 MarkupSafe==1.1.1
 mccabe==0.6.1
 murmurhash==1.0.5
